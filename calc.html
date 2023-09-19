@@ -3,42 +3,29 @@
     <head>
         <link id="style" rel="stylesheet" href="dark.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-        <style>
-           
-  
-
-   
-        </style>
         <script src="https://kit.fontawesome.com/12077604cc.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="out">
-            
-            <input id="result" class="display " type="text" value="0" disabled  />
+             <input id="result" class="display " type="text" value="0" disabled  />
        <div class="backwards">
         <i class="fa-solid fa-toggle-on toggle symbols icons "></i>
-       
-            <i class="fa-solid fa-arrow-left-long symbols icons " onclick="del()" ></i>
-   
-        
+         <i class="fa-solid fa-arrow-left-long symbols icons " onclick="del()" ></i> 
        </div>
        <div class="row">
       <div class="button num" onclick="addnum(event)" >1</div>
       <div class="button num" onclick="addnum(event)"  >2</div>
       <div class="button num" onclick="addnum(event)"  >3</div>
       <div class="button num divide  " onclick="symbols(event)"><span class="symbols ops">÷</span></div>
-
-       </div>
+    </div>
        <div class="row">
         <div class="button num" onclick="addnum(event)"  >4</div>
       <div class="button num" onclick="addnum(event)" >5</div>
       <div class="button num" onclick="addnum(event)"  >6</div>
       <div class="button num multi " onclick="symbols(event)"><span class="symbols ops">×</span></div>
-
-       </div>
+ </div>
        <div class="row">
         <div class="button num" onclick="addnum(event)"  >7</div>
         <div class="button num " onclick="addnum(event)"  >8</div>
@@ -51,123 +38,70 @@
         <div class="button equals " onclick="equals()"><span class=" ops">=</span></div>
         <div class="button num plus " onclick="symbols(event)"><span class="symbols ops">+</span></div>
        </div>
-       
-
-       </div>
-       
-
-       
+       </div>       
 <script>
-
-    const tog=document.getElementsByClassName("toggle")
+ const tog=document.getElementsByClassName("toggle")
     const style=document.getElementById("style")
-
- 
-   
     let n=0;
     const color=()=>{
    n+=1;
     if(n%2==0){
-        tog[0].classList.replace("fa-toggle-off","fa-toggle-on")
-        
-    }
+        tog[0].classList.replace("fa-toggle-off","fa-toggle-on")}
     else{
-        tog[0].classList.replace("fa-toggle-on","fa-toggle-off")
-    }   
+        tog[0].classList.replace("fa-toggle-on","fa-toggle-off")}   
     if (style.getAttribute('href') == 'dark.css') {
                 style.setAttribute('href', 'light.css');
             } else {
-                style.setAttribute('href', 'dark.css');
-            } 
-   
-}
+                style.setAttribute('href', 'dark.css');} }
 tog[0].addEventListener("click",color)
-
 let lastResult = null;
 let lastOperation = null;
-
-
 function addnum(event) {
  let numberPressed = event.target.innerText
   let result = document.getElementById('result')
-
-  if (result.value === "0") {
-    // First number we press
-    result.value = numberPressed
+if (result.value === "0") {
+     result.value = numberPressed
   } else {
-    result.value += numberPressed // We appen the char numberpressed to the output
-  }
-}
-
+    result.value += numberPressed }}
 function clearMemory() {
   lastOperation = null;
-  lastResult = null;
-}
-
+  lastResult = null;}
 function clearResult() {
-  document.getElementById('result').value = "0"
-}
-
+  document.getElementById('result').value = "0"}
 function del() {
   clearMemory()
-  clearResult()
-}
-
+  clearResult()}
 function symbols(event) {
  lastOperation = event.target.innerText
  if(lastResult === null) {
-    lastResult = document.getElementById('result').value
-  } else {
-    executeLastOperation()
-  }
-
-  clearResult()
-}
-
+    lastResult = document.getElementById('result').value}
+     else {
+    executeLastOperation()}
+  clearResult()}
 function executeLastOperation() {
   let resultNode = document.getElementById('result')
   let currentResult = resultNode.value
- 
-
-  let firstNumber = parseFloat(lastResult)
+ let firstNumber = parseFloat(lastResult)
   let secondNumber = parseFloat(currentResult)
-
-  switch(lastOperation) {
+switch(lastOperation) {
     case "+":
-    
       lastResult = firstNumber + secondNumber
       break
-
-    case "-":
-    
-      lastResult = firstNumber - secondNumber
+ case "-":
+    lastResult = firstNumber - secondNumber
       break
-
-    case "×":
+case "×":
       lastResult = firstNumber * secondNumber
-     
+     break
+case "÷":
+  lastResult = firstNumber / secondNumber
       break
-
-    case "÷":
- 
-      lastResult = firstNumber / secondNumber
-      break
-  }
-}
-
+  }}
 function equals() {
   executeLastOperation()
   let resultNode = document.getElementById('result')
   resultNode.value = lastResult
-
-  clearMemory()
-}
-
-    
-    
-   
-
-
+clearMemory()}
 </script>
     </body>
 </html>
