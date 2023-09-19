@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    transition: 1s;
+    
+}
+body{
+    background-color: #e9e8e8;
+    display: flex;
+    justify-content: center;    
+}
+.out{
+width:40vw;
+height:70vh;
+border-radius:24px;
+box-shadow:10px 0 15px rgb(254, 253, 253),-10px 0 15px rgb(251, 250, 250),10px 100px 15px rgb(254, 253, 253),-10px 100px 15px rgb(252, 251, 251),10px 170px 15px rgb(250, 250, 250),-10px 170px 15px rgb(254, 253, 253)
+
+}
+
+
+.backwards{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding:20px;
+height:10%;
+width:100%;
+background-color: #d7d7d7
+}    
+
+
+
+
+
+.button{
+border-radius:16px;
+display: flex;
+color:white;
+justify-content: center;
+align-items: center;
+width:23%;
+height:100%;
+font-size: 3rem;
+
+
+background: rgb(157, 157, 157);
+background: radial-gradient(circle, rgb(181, 181, 181) 0%, rgb(202, 202, 202) 86%, rgb(234, 232, 232) 100%); ;
+}
+.divide{
+background: url("\v960-ning-11.jpg");
+background-position-x: 10%;
+}
+.ops{
+    font-size: 5rem;
+}
+
+.multi{
+background: url("\v960-ning-11.jpg");
+background-position-x: 30%;  
+}
+.minus{
+background: url("\v960-ning-11.jpg");
+background-position-x: 45%;   
+}
+.plus{
+background: url("\v960-ning-11.jpg");
+background-position-x: 60%;   
+}
+
+.row{
+display: flex;
+justify-content: space-around;
+padding:10px;
+height:25%;
+background-color: #e2e2e2
+}
+
+
+
+.display{
+border-top-left-radius: 24px;
+border-top-right-radius: 24px;
+width:100%;
+height:20%;
+font-size: 4rem;
+color: white;
+text-align: right;
+border:none;
+outline:none;
+padding:10px;
+background:url("\v960-ning-11.jpg")
+}
+.equals{
+color:white;
+background:url("\v960-ning-11.jpg");
+background-position-x: 35%;
+}
+.icons{
+font-size: 3rem;
+color:#92b4ec
+}
+.button:hover{
+    transform: scale(1.05);transition: 0.5s;
+    color:#cedcf4
+}
